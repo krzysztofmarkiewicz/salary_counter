@@ -84,37 +84,6 @@ body {
   width: 400px;
 }
 
-input[type=checkbox] {
-  position: relative;
-  width: 106px;
-}
-input[type=checkbox]::after, input[type=checkbox]::before {
-  content: "";
-  position: absolute;
-  width: 50px;
-  height: 25px;
-  background-color: #3f3e3e;
-  border: 2px solid;
-}
-input[type=checkbox]::after {
-  left: 0;
-  border-top-left-radius: 20px;
-  border-bottom-left-radius: 20px;
-}
-input[type=checkbox]::before {
-  right: 0;
-  background-color: white;
-  border-left: 0;
-  border-top-right-radius: 20px;
-  border-bottom-right-radius: 20px;
-}
-input[type=checkbox]:checked::after {
-  background-color: white;
-}
-input[type=checkbox]:checked::before {
-  background-color: #3f3e3e;
-}
-
 @media screen and (max-width: 768px) {
   body {
     -webkit-box-align: start;
