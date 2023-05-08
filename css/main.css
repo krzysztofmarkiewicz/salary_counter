@@ -97,6 +97,7 @@ input[type=checkbox]::after, input[type=checkbox]::before {
   border: 2px solid;
 }
 input[type=checkbox]::after {
+  left: 0;
   border-top-left-radius: 20px;
   border-bottom-left-radius: 20px;
 }
