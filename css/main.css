@@ -5,6 +5,10 @@
           box-sizing: border-box;
 }
 
+html {
+  height: -webkit-fill-available;
+}
+
 body {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -14,10 +18,11 @@ body {
           align-items: stretch;
   position: relative;
   width: 100vw;
-  height: 100vh;
+  min-height: 100vh;
   font-size: 16px;
   overflow: scroll;
   font-family: "Montserrat", sans-serif;
+  min-height: -webkit-fill-available;
 }
 
 header {
@@ -71,10 +76,11 @@ header {
 
 .data {
   position: relative;
-  -webkit-box-orient: vertical;
+  display: inline;
+  -webkit-box-orient: horizontal;
   -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
+      -ms-flex-direction: row;
+          flex-direction: row;
   height: 100%;
   background-color: rgb(255, 255, 255);
   border: 1px solid rgb(200, 200, 200);
@@ -98,6 +104,7 @@ header {
       -ms-flex-pack: justify;
           justify-content: space-between;
   height: 80px;
+  width: 100px;
   border-bottom: 1px solid rgb(200, 200, 200);
 }
 
