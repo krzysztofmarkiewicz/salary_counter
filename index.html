@@ -27,7 +27,7 @@
             </div>
             <div class="top-info-child">
                 <p class="header-top-info">L4</p>
-                <p class="sick-leave-day-value">9999.99</p>
+                <p class="value-top-info sick-leave-day-value">9999.99</p>
             </div>
             <div class="top-info-child">
                 <p class="header-top-info">Premia</p>
@@ -44,13 +44,13 @@
                 <div class="app-data">
                     <div>
                         <!-- <label for="num-of-days"></label> -->
-                        <!-- <input type="number" name="num-of-days" class="num-of-working-days"> -->
-                        <select name="num-of-days" class="num-of-working-days">
-                            <option value="19">19</option>
-                            <option value="20">20</option>
-                            <option value="21">21</option>
-                            <option value="22">22</option>
-                            <option value="23">23</option>
+                            <!-- <input type="number" name="num-of-days" class="num-of-working-days"> -->
+                            <select name="num-of-days" class="num-of-working-days">
+                                <option value="19">19</option>
+                                <option value="20">20</option>
+                                <option value="21">21</option>
+                                <option value="22">22</option>
+                                <option value="23">23</option>
                         </select>
                     </div>
 
@@ -101,7 +101,41 @@
 
 
 
+            <div class="app-elem app-elem--vacation">
+                <h2>Urlop</h2>
+                <div class="app-data">
+                    <div> 
+                        <!-- <label for="vacation-days"></label> -->
+                        <input type="number" name="vacation-days" class="vacation-days">
+                    </div>
+                    <!-- <div> <label for="vacation-value">Wartość:</label>
+                        <input type="number" name="vacation-value" class="vacation-day-value" readonly>
+                    </div> -->
 
+
+                </div>
+
+            </div>
+            <div class="app-elem app-elem--sick-leave">
+                <h2>L4</h2>
+                <div class="app-data">
+                    <div>
+                        <!-- <label for="sick-leave-days"></label> -->
+                        <input type="number" name="sick-leave-days" class="sick-leave-days">
+                    </div>
+                </div>
+                
+
+            </div>
+            <div class="app-elem app-elem--sick-leave">
+                <h2>Podstawa L4</h2>
+                <div class="app-data">
+                    <input type="checkbox" name="base-sick-leave-day-value" id="base-sick-leave-day-value">
+                    <p class="checkbox">Płatne 80%</p>
+                </div>
+
+
+            </div>
             <div class="app-elem app-elem--bonus">
                 <h2>Premia:</h2>
                 <div class="app-data">
