@@ -1,3 +1,4 @@
+const header = document.querySelector('h1')
 const numOfWorkingDays = document.querySelector('.num-of-working-days')
 const month = document.querySelector('.month')
 const hoursWorked = document.querySelector('.hours-worked')
@@ -6,11 +7,11 @@ const hourlyRateNetto = document.querySelector('.hourly-rate-netto')
 const typeOfContract = document.querySelector('#type-of-contract')
 const vacationDays = document.querySelector('.vacation-days')
 const vacationDayValue = document.querySelector('.vacation-day-value')
-const vacationSum = document.querySelector('.vacation-sum span')
+const vacationSum = document.querySelector('.vacation-sum')
 const sickLeaveDays = document.querySelector('.sick-leave-days')
 const sickLeaveDayValue = document.querySelector('.sick-leave-day-value')
 const baseSickLeaveDayValue = document.querySelector('#base-sick-leave-day-value')
-const sickLeaveSum = document.querySelector('.sick-leave-sum span')
+const sickLeaveSum = document.querySelector('.sick-leave-sum')
 const bonus = document.querySelector('.bonus')
 const result = document.querySelector('.result')
 
@@ -36,12 +37,12 @@ const SetBaseSickLeaveDayVal = () => {
     } else {
         baseSickLeaveDayVal = (baseToPay * .8) / daysInMonth
     }
-    sickLeaveDayValue.value = Number(baseSickLeaveDayVal).toFixed(2)
+    sickLeaveDayValue.innerHTML = Number(baseSickLeaveDayVal).toFixed(2)
 
 }
 //set value of one vacation day
 const SetvacationDayValue = () => {
-    vacationDayValue.value = (baseToPay / numOfWorkingDays.value).toFixed(2)
+    vacationDayValue.innerHTML = (baseToPay / numOfWorkingDays.value).toFixed(2)
 }
 
 
@@ -64,11 +65,11 @@ const calculateValueOfDays = (numOfDays, ValueOfDay) => {
 }
 
 const calulateValueOfVacation = () => {
-    vacationSum.innerHTML = calculateValueOfDays(Number(vacationDays.value), Number(vacationDayValue.value))
+    vacationSum.innerHTML = calculateValueOfDays(Number(vacationDays.value), Number(vacationDayValue.innerText))
 
 }
 const calulateValueOfsickLeave = () => {
-    sickLeaveSum.innerHTML = calculateValueOfDays(Number(sickLeaveDays.value), Number(sickLeaveDayValue.value)).toFixed(2)
+    sickLeaveSum.innerHTML = calculateValueOfDays(Number(sickLeaveDays.value), Number(sickLeaveDayValue.innerHTML)).toFixed(2)
 }
 const addMonthToCoockies = () => {
     localStorage.setItem('month', month.value)
@@ -83,14 +84,14 @@ const addNumOfWorkingDays = () => {
 
 const setHourlyRateNetto = () => {
     if (typeOfContract.checked === true) {
-        hourlyRateNetto.value = Number(hourlyRateBrutto.value) - 9
+        hourlyRateNetto.innerHTML = Number(hourlyRateBrutto.value) - 9
     } else {
-        hourlyRateNetto.value = Number(hourlyRateBrutto.value) - 16
+        hourlyRateNetto.innerHTML = Number(hourlyRateBrutto.value) - 16
     }
 }
 
 const setResult = () => {
-    result.innerHTML = Number(vacationSum.innerText) + Number(sickLeaveSum.innerText) + (hoursWorked.value * hourlyRateNetto.value)+Number(bonus.value)
+    header.innerHTML = Number(vacationSum.innerText) + Number(sickLeaveSum.innerText) + (hoursWorked.value * Number(hourlyRateNetto.innerHTML))+Number(bonus.value)
 }
 
 const calculate = () => {
@@ -107,7 +108,7 @@ const calculate = () => {
 
 //listeners
 month.addEventListener('change', addMonthToCoockies)
-numOfWorkingDays.addEventListener('keyup', addNumOfWorkingDays)
+numOfWorkingDays.addEventListener('change', addNumOfWorkingDays)
 hoursWorked.addEventListener('keyup',calculate)
 hourlyRateBrutto.addEventListener('keyup', calculate)
 typeOfContract.addEventListener('change', calculate)

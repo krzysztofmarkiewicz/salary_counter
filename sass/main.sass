@@ -4,112 +4,136 @@
     box-sizing: border-box
 
 body
-    position: relative
-    width: 100%
-    height: 100%
     display: flex
-    justify-content: center
-    align-items: center
-    background-color: #6b6b6b
-    font-size: 20px
+    align-items: stretch
+    position: relative
+    width: 100vw
+    height: 100vh
+    font-size: 16px
+    overflow: scroll
+    font-family: 'Montserrat', sans-serif
     
-
+    
+header
+    width: 100%
+    box-shadow: 0px 0px 20px 0px rgba(115, 115, 115, 1)
+    background-color: rgb(38,155,35) 
+    color: rgb(255,255 ,255 )
+    font-size: 30px
+    padding-left: 50px
 .app
-    display: grid
-    grid-template-columns: repeat(2, 1fr)
-    grid-template-rows: repeat(4, 1fr)
-    grid-column-gap: 50px
-    grid-row-gap: 0px
-    background-color: #ffffff49
-    padding: 20px
-    border-radius: 20px
-    &-data
-        position: relative
-        display: flex
-        justify-content: space-between
-        align-items: center
-        height: 40px
-
-        label
-            width: 85px
-        input
-            background-color: #e6e6e6
-            border: none
-            width: 100px
-            height: 25px
-            border-radius: 20px
-            padding-left: 10px
-            font-size: 20px
-            &[readonly]
-                background-color: #cacaca
-            &[type=month]
-                width: 200px
-            &[name=num-of-days]
-                width: 50px
-            
-    .sum
-        // width: 30px
-        color: #fff
-        
-    
-
-.app-elem
+    position: relative
     display: flex
     flex-direction: column
-    justify-self: center
-    align-content: center
-    width: 400px
+    width: 100%
+    // height: 100%
+    background-color: rgb(229, 229,229 )
+    h2
+        position: absolute
+        z-index: 1
+        pointer-events: none
 
-
-// input[type="checkbox"]
-//     position: relative
-//     width: 106px
-//     &::after, &::before
-//         content: ""
-//         position: absolute
-//         width: 50px
-//         height: 25px
-//         background-color: #3f3e3e
-//         border: 2px solid
-//     &::after
-//         left:0
-//         border-top-left-radius: 20px
-//         border-bottom-left-radius: 20px
-//     &::before
-//         right: 0
-//         background-color: white
-//         border-left: 0
-//         border-top-right-radius: 20px
-//         border-bottom-right-radius: 20px
-//     &:checked
-//         &::after
-//             background-color: white
-//         &::before
-//             background-color: #3f3e3e
-
-@media screen and (max-width: 768px)
-    body
-        align-items: flex-start
-    .app
+    &-data
+        // position: relative
+        width: 100%
+        input, select, .checkbox
+            position: absolute
+            top: 0
+            right: 0
+            background-color: none
+            border: none
+            width: 100%
+            height: 100%
+            border-radius: 5px
+            // padding-left: 10px
+            font-size: 20px
+            text-align: right
+            cursor: pointer
+            &[type=month]
+                // width: 200px
+            &[name=num-of-days]
+                // width: 50px
+            
+        .checkbox
+            position: relative
+            width: 100%
+            pointer-events: none
+.data
+    position: relative
+    // display: flex
+    flex-direction: column
+    // align-content: center
+    // align-self: stretch
+    height: 100%
+    background-color: rgb(255, 255, 255)
+    border: 1px solid rgb(200,200 ,200 )
+    border-radius: 3px
+    box-shadow: 0px 0px 3px 0px rgba(200, 200, 200,1)
+    padding: 10px
+    margin: 0 10px
+    overflow: scroll
+.app-elem
+    position: relative
+    display: flex
+    align-items: center
+    justify-content: space-between
+    height: 80px
+    border-bottom: 1px solid rgb(200,200 ,200 )
+.results
+    // position: absolute
+    bottom: 0
+    display: flex
+    flex-direction: row
+    justify-content: space-between
+    // gap: 2px
+    width: 100%
+    height: 70px
+    background-color:#bdbdbd
+    box-shadow: 0px 0px 20px 0px rgba(175, 175, 175, 1)
+    border-top: 1px solid rgb(200,200 ,200 )
+    color: rgb(117,117,117 , )
+    z-index: 1
+    &-child
         display: flex
         flex-direction: column
-        align-items: center
-        border-radius: 0
+        justify-content: center
         width: 100%
-        height: 100%
-        background-color:#6b6b6b
-        &-data
-            position: relative
-            display: flex
-            justify-content: space-between
-            align-items: center
-            height: 40px
-    .app-elem
-        margin: 10px
-    input[type="checkbox"]
-        // width: 46px
-       
+        background-color: #ffffff
+        text-align: center
+        .header-result
+            font-weight: bold
+.top-info
+    display: flex
+    flex-direction: row
+    justify-content: space-between
+    width: 100%
+    height: 100px
+    color: rgb(117,117,117 , )
+    &-child
+        display: flex
+        flex-direction: column
+        justify-content: center
+        gap: 10px
+        width: 100%
+        text-align: center
+        .value-top-info
+            color: rgb(33,33 ,33 )
+
+input[type="checkbox"]
+    opacity: 0
+    position: absolute
+    top: 0
+    right: 0
+    width: 100%
+    height: 100%
+    cursor: pointer
+    &:active
+          background-color: red  
+   
+
+
         
         
+
 
                 

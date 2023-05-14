@@ -6,71 +6,32 @@
 }
 
 body {
-  position: relative;
-  width: 100%;
-  height: 100%;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  background-color: #6b6b6b;
-  font-size: 20px;
+  -webkit-box-align: stretch;
+      -ms-flex-align: stretch;
+          align-items: stretch;
+  position: relative;
+  width: 100vw;
+  height: 100vh;
+  font-size: 16px;
+  overflow: scroll;
+  font-family: "Montserrat", sans-serif;
+}
+
+header {
+  width: 100%;
+  -webkit-box-shadow: 0px 0px 20px 0px rgb(115, 115, 115);
+          box-shadow: 0px 0px 20px 0px rgb(115, 115, 115);
+  background-color: rgb(38, 155, 35);
+  color: rgb(255, 255, 255);
+  font-size: 30px;
+  padding-left: 50px;
 }
 
 .app {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  grid-template-rows: repeat(4, 1fr);
-  grid-column-gap: 50px;
-  grid-row-gap: 0px;
-  background-color: rgba(255, 255, 255, 0.2862745098);
-  padding: 20px;
-  border-radius: 20px;
-}
-.app-data {
   position: relative;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  height: 40px;
-}
-.app-data label {
-  width: 85px;
-}
-.app-data input {
-  background-color: #e6e6e6;
-  border: none;
-  width: 100px;
-  height: 25px;
-  border-radius: 20px;
-  padding-left: 10px;
-  font-size: 20px;
-}
-.app-data input[readonly] {
-  background-color: #cacaca;
-}
-.app-data input[type=month] {
-  width: 200px;
-}
-.app-data input[name=num-of-days] {
-  width: 50px;
-}
-.app .sum {
-  color: #fff;
-}
-
-.app-elem {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -78,48 +39,151 @@ body {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-  justify-self: center;
-  -ms-flex-line-pack: center;
-      align-content: center;
-  width: 400px;
+  width: 100%;
+  background-color: rgb(229, 229, 229);
+}
+.app h2 {
+  position: absolute;
+  z-index: 1;
+  pointer-events: none;
+}
+.app-data {
+  width: 100%;
+}
+.app-data input, .app-data select, .app-data .checkbox {
+  position: absolute;
+  top: 0;
+  right: 0;
+  background-color: none;
+  border: none;
+  width: 100%;
+  height: 100%;
+  border-radius: 5px;
+  font-size: 20px;
+  text-align: right;
+  cursor: pointer;
+}
+.app-data .checkbox {
+  position: relative;
+  width: 100%;
+  pointer-events: none;
 }
 
-@media screen and (max-width: 768px) {
-  body {
-    -webkit-box-align: start;
-        -ms-flex-align: start;
-            align-items: flex-start;
-  }
-  .app {
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-orient: vertical;
-    -webkit-box-direction: normal;
-        -ms-flex-direction: column;
-            flex-direction: column;
-    -webkit-box-align: center;
-        -ms-flex-align: center;
-            align-items: center;
-    border-radius: 0;
-    width: 100%;
-    height: 100%;
-    background-color: #6b6b6b;
-  }
-  .app-data {
-    position: relative;
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-pack: justify;
-        -ms-flex-pack: justify;
-            justify-content: space-between;
-    -webkit-box-align: center;
-        -ms-flex-align: center;
-            align-items: center;
-    height: 40px;
-  }
-  .app-elem {
-    margin: 10px;
-  }
+.data {
+  position: relative;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  height: 100%;
+  background-color: rgb(255, 255, 255);
+  border: 1px solid rgb(200, 200, 200);
+  border-radius: 3px;
+  -webkit-box-shadow: 0px 0px 3px 0px rgb(200, 200, 200);
+          box-shadow: 0px 0px 3px 0px rgb(200, 200, 200);
+  padding: 10px;
+  margin: 0 10px;
+  overflow: scroll;
+}
+
+.app-elem {
+  position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  height: 80px;
+  border-bottom: 1px solid rgb(200, 200, 200);
+}
+
+.results {
+  bottom: 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  width: 100%;
+  height: 70px;
+  background-color: #bdbdbd;
+  -webkit-box-shadow: 0px 0px 20px 0px rgb(175, 175, 175);
+          box-shadow: 0px 0px 20px 0px rgb(175, 175, 175);
+  border-top: 1px solid rgb(200, 200, 200);
+  color: rgb(117, 117, 117);
+  z-index: 1;
+}
+.results-child {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  width: 100%;
+  background-color: #ffffff;
+  text-align: center;
+}
+.results-child .header-result {
+  font-weight: bold;
+}
+
+.top-info {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  width: 100%;
+  height: 100px;
+  color: rgb(117, 117, 117);
+}
+.top-info-child {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  gap: 10px;
+  width: 100%;
+  text-align: center;
+}
+.top-info-child .value-top-info {
+  color: rgb(33, 33, 33);
+}
+
+input[type=checkbox] {
+  opacity: 0;
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 100%;
+  height: 100%;
+  cursor: pointer;
+}
+input[type=checkbox]:active {
+  background-color: red;
 }/*# sourceMappingURL=main.css.map */

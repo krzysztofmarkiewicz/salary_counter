@@ -6,98 +6,171 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Licznik wypłat</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100;400;700;900&display=swap">
     <link rel="stylesheet" href="./css/main.css">
+    <link rel="stylesheet" href="./css/medium.css">
 </head>
 
 <body>
     <div class="app">
-        <div class="app-elem app-elem--num-of-days">
-            <h2>Dni robocze w miesiącu</h2>
-            <div class="app-data">
-                <div><label for="num-of-days">Ilość dni:</label>
-                    <input type="number" name="num-of-days" class="num-of-working-days">
-                </div>
-                <div><input type="month" name="" id="" class="month"></div>
-
-
+        <header>
+            <h1>Header</h1>
+        </header>
+        <div class="top-info">
+            <div class="top-info-child">
+                <p class="header-top-info">Za godz.</p>
+                <p class="value-top-info hourly-rate-netto">0</p>
             </div>
-
+            <div class="top-info-child">
+                <p class="header-top-info">Urlop</p>
+                <p class="value-top-info vacation-day-value">0</p>
+            </div>
+            <div class="top-info-child">
+                <p class="header-top-info">L4</p>
+                <p class="sick-leave-day-value">9999.99</p>
+            </div>
+            <div class="top-info-child">
+                <p class="header-top-info">Premia</p>
+                <p class="value-top-info">9999.99</p>
+            </div>
+            <div class="top-info-child">
+                <p class="header-top-info">Kary</p>
+                <p class="value-top-info">9999.99</p>
+            </div>
         </div>
-        <div class="app-elem app-elem--hours-worked">
-            <h2>Przepracowane godziny</h2>
-            <div class="app-data">
-                <div><label for="hours-worked">Ilość godzin:</label>
-                    <input type="number" name="hours-worked" class="hours-worked">
+        <div class="data">
+            <div class="app-elem app-elem--num-of-days">
+                <h2>Dni robocze</h2>
+                <div class="app-data">
+                    <div>
+                        <!-- <label for="num-of-days"></label> -->
+                            <!-- <input type="number" name="num-of-days" class="num-of-working-days"> -->
+                            <select name="num-of-days" class="num-of-working-days">
+                                <option value="19">19</option>
+                                <option value="20">20</option>
+                                <option value="21">21</option>
+                                <option value="22">22</option>
+                                <option value="23">23</option>
+                        </select>
+                    </div>
+
+                </div>
+            </div>
+            <div class="app-elem app-elem--num-of-days">
+                <h2>Miesiąc:</h2>
+                <div class="app-data">
+
+                    <input type="month" name="" id="" class="month">
+                </div>
+
+
+
+            </div>
+            <div class="app-elem app-elem--hours-worked">
+                <h2>Godziny</h2>
+                <div class="app-data">
+                    <div>
+                        <!-- <label for="hours-worked"></label> -->
+                        <input type="number" name="hours-worked" class="hours-worked" value="0">
+                    </div>
+
+                </div>
+            </div>
+            <div class="app-elem hourly-rate-wrap">
+                <h2>Stawka</h2>
+                <div class="app-data app-data--hourly-rate">
+                    <div>
+                        <!-- <label for="hourly-rate-brutto"></label> -->
+                        <input type="number" name="hourly-rate-brutto" class="hourly-rate-brutto" value="0">
+                    </div>
+                    <!-- <div> <label for="hourly-rate-netto">Netto</label>
+                        <input type="number" name="hourly-rate-netto" class="hourly-rate-netto" readonly>
+                    </div> -->
+
+
+
+                </div>
+            </div>
+            <div class="app-elem hourly-rate-wrap">
+                <h2>Umowa: </h2>
+                <div class="app-data">
+                    <input type="checkbox" name="" id="type-of-contract">
+                    <p class="checkbox">o pracę</p>
+                </div>
+            </div>
+
+
+
+            <div class="app-elem app-elem--vacation">
+                <h2>Urlop</h2>
+                <div class="app-data">
+                    <div> 
+                        <!-- <label for="vacation-days"></label> -->
+                        <input type="number" name="vacation-days" class="vacation-days">
+                    </div>
+                    <!-- <div> <label for="vacation-value">Wartość:</label>
+                        <input type="number" name="vacation-value" class="vacation-day-value" readonly>
+                    </div> -->
+
+
+                </div>
+
+            </div>
+            <div class="app-elem app-elem--sick-leave">
+                <div class="app-data">
+                    <div>
+                        <!-- <label for="sick-leave-days"></label> -->
+                        <input type="number" name="sick-leave-days" class="sick-leave-days">
+                    </div>
+                    <h2>L4</h2>
+                </div>
+                
+
+            </div>
+            <div class="app-elem app-elem--sick-leave">
+                <h2>Podstawa L4</h2>
+                <div class="app-data">
+                    <input type="checkbox" name="base-sick-leave-day-value" id="base-sick-leave-day-value">
+                    <p class="checkbox">Płatne 80%</p>
+                </div>
+
+
+            </div>
+            <div class="app-elem app-elem--bonus">
+                <h2>Premia:</h2>
+                <div class="app-data">
+                    <div>
+                        <!-- <label for="bonus"></label> -->
+                        <input type="number" name="bonus" class="bonus">
+                    </div>
+
                 </div>
 
             </div>
         </div>
-        <div class="app-elem hourly-rate-wrap">
-            <h2>Stawka godzinowa</h2>
-            <div class="app-data app-data--hourly-rate">
-                <div><label for="hourly-rate-brutto">Brutto</label>
-                    <input type="number" name="hourly-rate-brutto" class="hourly-rate-brutto">
-                </div>
-                <div> <label for="hourly-rate-netto">Netto</label>
-                    <input type="number" name="hourly-rate-netto" class="hourly-rate-netto" readonly>
-                </div>
 
-
-
+        <div class="results">
+            <div class="results-child">
+                <p class="header-result">Godziny</p>
+                <p class="value-result">9999.99</p>
             </div>
-            <div class="app-data">
-                <span>Umowa o pracę</span>
-                <input type="checkbox" name="" id="type-of-contract">
-                <span>Umowa zlecenie</span>
-
+            <div class="results-child">
+                <p class="header-result">Urlop</p>
+                <p class="value-result vacation-sum">0</p>
             </div>
-
-
+            <div class="results-child">
+                <p class="header-result">L4</p>
+                <p class="value-result sick-leave-sum">0</p>
+            </div>
+            <div class="results-child">
+                <p class="header-result">Premia</p>
+                <p class="value-result">9999.99</p>
+            </div>
+            <div class="results-child">
+                <p class="header-result">Kary</p>
+                <p class="value-result">9999.99</p>
+            </div>
         </div>
-        <div class="app-elem app-elem--vacation">
-            <h2>Urlop</h2>
-            <div class="app-data">
-                <div> <label for="vacation-days">Ilości dni:</label>
-                    <input type="number" name="vacation-days" class="vacation-days">
-                </div>
-                <div> <label for="vacation-value">Wartość:</label>
-                    <input type="number" name="vacation-value" class="vacation-day-value" readonly>
-                </div>
-
-
-            </div>
-
-            <p class="sum vacation-sum">Do wypłaty za Urlop: <span>0</span> zł</p>
-
-        </div>
-        <div class="app-elem app-elem--sick-leave">
-            <h2>L4</h2>
-            <div class="app-data">
-                <div><label for="sick-leave-days">Ilości dni:</label>
-                    <input type="number" name="sick-leave-days" class="sick-leave-days">
-                </div>
-                <div> <label for="sick-leave-value">Wartość:</label>
-                    <input type="number" name="sick-leave-value" class="sick-leave-day-value" readonly>
-                </div>
-            </div>
-            <div class="app-data">
-                <p>Płatne 80%</p>
-                <input type="checkbox" name="base-sick-leave-day-value" id="base-sick-leave-day-value">
-                <p>Płatne 100%</p>
-            </div>
-            <p class="sum sick-leave-sum">Do wypłaty za L4: <span>0</span> zł</p>
-
-        </div>
-        <div class="app-elem app-elem--bonus">
-            <h2>Premia:</h2>
-            <div class="app-data"> 
-                <div> <label for="bonus">Wartość:</label>
-                <input type="number" name="bonus" class="bonus"></div>
-               
-            </div>
-
-        </div>
-        <div class="result"></div>
     </div>
     <script src="./js/main.js"></script>
 </body>
