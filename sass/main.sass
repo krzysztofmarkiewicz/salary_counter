@@ -2,18 +2,16 @@
     margin: 0
     padding: 0
     box-sizing: border-box
-html
-    height: -webkit-fill-available
+
 body
     display: flex
     align-items: stretch
     position: relative
     width: 100vw
-    min-height: 100vh
+    height: 100vh
     font-size: 16px
     overflow: scroll
     font-family: 'Montserrat', sans-serif
-    min-height: -webkit-fill-available
     
     
 header
@@ -62,8 +60,8 @@ header
             pointer-events: none
 .data
     position: relative
-    display: inline
-    flex-direction: row
+    // display: flex
+    flex-direction: column
     // align-content: center
     // align-self: stretch
     height: 100%
@@ -80,7 +78,6 @@ header
     align-items: center
     justify-content: space-between
     height: 80px
-    width: 100%
     border-bottom: 1px solid rgb(200,200 ,200 )
 .results
     // position: absolute
