@@ -5,6 +5,10 @@
           box-sizing: border-box;
 }
 
+html {
+  height: 100%;
+}
+
 body {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -14,7 +18,7 @@ body {
           align-items: stretch;
   position: relative;
   width: 100vw;
-  height: 100vh;
+  height: 100%;
   font-size: 16px;
   overflow: scroll;
   font-family: "Montserrat", sans-serif;
@@ -24,7 +28,7 @@ header {
   width: 100%;
   -webkit-box-shadow: 0px 0px 20px 0px rgb(115, 115, 115);
           box-shadow: 0px 0px 20px 0px rgb(115, 115, 115);
-  background-color: rgb(38, 155, 35);
+  background-color: rgb(127, 155, 35);
   color: rgb(255, 255, 255);
   font-size: 30px;
   padding-left: 50px;
